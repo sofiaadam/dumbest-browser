@@ -17,22 +17,17 @@ class Page
   def title
     p @doc.css('title').text
   end
+  # def calculate_word_count
+  # end
+  
   
   def links
     @links = []
-    find_link = @doc.search("a").map { |tag| tag["href"]}
-    find_link.map! {|link|}
-    if link.start_with?"http://"
-      @link << link
+    @doc.css("a").each do |y|
+      next unless y[:href].include? "http://"
+      @links << y[:href]
     end
-    # Research alert!
-    # How do you use Nokogiri to extract all the link URLs on a page?
-    #
-    # These should only be URLs that look like
-    #   <a href="http://somesite.com/page.html">Click here!</a>
-    # This would pull out "http://somesite.com/page.html"
+    @links
   end
 end
-
-
 

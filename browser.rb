@@ -18,8 +18,8 @@ class Browser
     puts "Title: "
     current_url.title
     # puts "Content length: #{current_url} characters"
-    # puts "Links:"
-    # puts "#{current_url.links}"
+    puts "Links:"
+    puts "#{current_url.links}"
     # Questions:
     #  1. How can a user quit the browser gracefully?
     #  2. How can a user ask for help, i.e., how do they know what commands are available to them?
